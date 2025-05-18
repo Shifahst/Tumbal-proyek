@@ -39,7 +39,7 @@
                     <dt class="w-8 h-8 rounded-full bg-teal-100 dark:bg-gray-500 text-teal-600 dark:text-teal-300 text-sm font-medium flex items-center justify-center mb-1">
                         {{ $kursusAktif->total() }}
                     </dt>
-                    <dd class="text-teal-600 dark:text-teal-300 text-sm font-medium">Aktif</dd>
+                    <dd class="text-teal-600 dark:text-teal-300 text-sm font-medium">Aktif tes</dd>
                 </dl>
             </div>
         </div>
