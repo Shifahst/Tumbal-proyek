@@ -42,11 +42,26 @@ use App\Http\Controllers\PenilaianKursusController;
 use App\Http\Controllers\RekomendasiController;
 use App\Http\Controllers\UmpanBalikController;
 use App\Http\Middleware\PeranMiddleware;
+use App\Http\Controllers\SkillMatchingController;
+use App\Http\Controllers\BerandaTraineeController;
 
 // Route Default
 Route::get('/', function () {
     return redirect('/Home');
 });
+
+// perubahan start
+// Skill Matching
+Route::get('/SkillMatching', function () {
+    return view('SkillMatching');
+});
+
+// Beranda Trainee baru
+Route::get('/BerandaTrainee', function () {
+    return view('Traineev2.BerandaTrainee');
+});
+
+// perubahan end
 
 // Route Layout
 Route::get('/Main', [MainController::class, 'Main']);

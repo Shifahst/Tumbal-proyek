@@ -26,6 +26,29 @@
                 <br>Ke Halamanmu
             </h2>
 
+            <!-- Gooogle seaction -->
+            <div class="w-full px-4 lg:px-0 mt-2 sm:mt-5 lg:mt-0 lg:max-w-md">
+                <!-- Minat Bidang -->
+                <div class="mb-2">
+                    <a href="#"
+                        class="flex items-center justify-center gap-3 border border-gray-300 text-gray-900 text-sm font-medium rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4 hover:bg-gray-300 transition duration-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        
+                        <i class="fa-brands fa-google text-lg" style="color: #000000;"></i>
+                        <span>Masuk dengan Google</span>
+
+                    </a> 
+                </div>
+
+                <!-- Line atau -->
+                <div class="flex items-center justify-center mb-6 mt-2">
+                    <div class="w-full border-t border-gray-400"></div>
+                    <h4 class="px-4 text-sm font-semibold text-gray-950 whitespace-nowrap">
+                        atau
+                    </h4>
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+            </div>
+
             <!-- Cek apakah ada pesan kesalahan untuk login_error -->
             @if ($errors->has('login_error'))
             <div class="text-red-500 text-sm mb-4">
@@ -40,7 +63,7 @@
                         Email
                     </label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}"
-                        class="bg-gray-100 border border-Border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="border border-Border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="john.doe@company.com" />
                     <!-- Pesan error untuk email -->
                     @error('email')
@@ -49,12 +72,12 @@
 
                 </div>
 
-                <div class="mb-4 lg:mb-6 relative">
+                <div class="relative">
                     <label for="kata_sandi" class="block mb-2 text-sm font-semibold text-gray-950 dark:text-white">
                         Kata Sandi
                     </label>
                     <input type="password" id="kata_sandi" name="kata_sandi"
-                        class="bg-gray-100 border border-Border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="border border-Border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="•••••••••" />
                     <i class="fas fa-eye absolute right-3 top-12 transform -translate-y-1/2 cursor-pointer"
                         id="togglePassword"></i>
@@ -62,6 +85,10 @@
                     @error('kata_sandi')
                     <div class="text-red-500 text-sm">{{ $message }}</div>
                     @enderror
+                </div>
+
+                <div class="mb-4 lg:mb-6 text-right text-xs sm:text-sm font-semibold mt-2 w-full text-HoverGlow hover:text-ButtonBase transition duration-700">
+                    <a href="#">Lupa kata sandi?</a>
                 </div>
 
                 <div class="flex justify-center sm:mt-8 mt-0 lg:mt-0 ">
@@ -72,12 +99,13 @@
                 </div>
             </form>
 
+
             <a href="/Daftar" class="group font-semibold text-sm sm:text-base mt-2 text-ButtonBase transition duration-700">
                 <span class="group-hover:text-HoverGlow text-slate-950">Belum Punya Akun?</span>
                 <span class="group-hover:text-HoverGlow">Daftar</span>
             </a>
 
-            <a href="/Home" class="text-sm sm:text-base font-semibold mt-7 text-slate-800 hover:text-HoverGlow transition duration-700">Kembali Ke Beranda</a>
+            <!-- <a href="/Home" class="text-sm sm:text-base font-semibold mt-7 text-slate-800 hover:text-HoverGlow transition duration-700">Kembali Ke Beranda</a> -->
         </div>
     </div>
 
