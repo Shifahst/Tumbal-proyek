@@ -116,14 +116,14 @@
                 <div class="items-center absolute top-14 sm:top-0 right-0 z-10 sm:relative justify-between hidden sm:w-full md:flex md:w-auto md:order-1" id="navbar-default">
                     <ul class="flex flex-col font-medium text-sm p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
                         <li>
-                            <a href="#"
+                            <a href="/BerandaTrainee"
                                 class="{{ request()->is('BerandaTrainee') ? ' text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:border-0 md:p-0 hover:text-black transition duration-700">
                                 Beranda
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="{{ request()->is('DaftarKursus') ? ' text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:border-0 md:p-0 hover:text-black transition duration-700">
+                            <a href="/Jelajahi"
+                                class="{{ request()->is('Jelajahi') ? ' text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:border-0 md:p-0 hover:text-black transition duration-700">
                                 Jelajahi
                             </a>
                         </li>

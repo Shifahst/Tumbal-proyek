@@ -16,7 +16,7 @@
 
 <body class="w-full">
     <!-- Navbar + Image -->
-    <nav class="bg-white shadow-md border-gray-200 dark:bg-black dark:bg-opacity-50 fixed w-full z-10">
+    <nav class="bg-white shadow-md border-b border-gray-200 dark:bg-black dark:bg-opacity-50 fixed top-0 left-0 w-full z-10">
         <div class="max-w-screen-2xl grid grid-cols-12 items-center sm:justify-between mx-auto px-2 py-2 sm:px-4 ">
             <a href="#" class="flex {{ Auth::check() ? 'col-span-9' : 'col-span-8' }} sm:col-span-5 items-center space-x-2 rtl:space-x-reverse">
                 <img src="{{ asset('image/SKILLB.png') }}" class="w-7 h-7 rounded-full" alt="Flowbite Logo" />
@@ -115,6 +115,67 @@
 
                 <div class="items-center absolute top-14 sm:top-0 right-0 z-10 sm:relative justify-between hidden sm:w-full md:flex md:w-auto md:order-1" id="navbar-default">
                     <ul class="flex flex-col font-medium text-sm p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
+
+                        {{-- BERANDA (Selalu di depan, tergantung status login) --}}
+                        @auth
+                        <li>
+                            <a href="/BerandaTrainee"
+                                class="{{ request()->is('BerandaTrainee') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Beranda
+                            </a>
+                        </li>
+                        @else
+                        <li>
+                            <a href="/Home"
+                                class="{{ request()->is('Home') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Beranda
+                            </a>
+                        </li>
+                        @endauth
+
+                        {{-- TENTANG KAMI (hanya untuk guest) --}}
+                        @guest
+                        <li>
+                            <a href="/TentangKami"
+                                class="{{ request()->is('TentangKami') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Tentang Kami
+                            </a>
+                        </li>
+                        @endguest
+
+                        {{-- JELAJAHI (selalu muncul) --}}
+                        <li>
+                            <a href="/DaftarKursus"
+                                class="{{ request()->is('DaftarKursus') || request()->is('DaftarKursus') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Jelajahi
+                            </a>
+                        </li>
+
+                        {{-- PROFIL & RIWAYAT (hanya jika login) --}}
+                        @auth
+                        <li>
+                            <a href="/Profil"
+                                class="{{ request()->is('Profil') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Profil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Riwayat"
+                                class="{{ request()->is('Riwayat') ? 'text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:p-0 hover:text-black transition duration-700">
+                                Riwayat
+                            </a>
+                        </li>
+                        @endauth
+
+                    </ul>
+                </div>
+
+
+
+
+
+                <!-- <div class="items-center absolute top-14 sm:top-0 right-0 z-10 sm:relative justify-between hidden sm:w-full md:flex md:w-auto md:order-1" id="navbar-default">
+                    <ul class="flex flex-col font-medium text-sm p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
                         <li>
                             <a href="/Home"
                                 class="{{ request()->is('Home') ? ' text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:border-0 md:p-0 hover:text-black transition duration-700">
@@ -130,51 +191,16 @@
                         <li>
                             <a href="/DaftarKursus"
                                 class="{{ request()->is('DaftarKursus') ? ' text-blue-600 font-bold' : 'text-gray-500' }} block py-2 px-3 rounded md:border-0 md:p-0 hover:text-black transition duration-700">
-                                Kursus
+                                Jelajahi
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </nav>
 
 
-    <div class="relative w-full">
-        <img class="h-auto w-full max-h-[700px] object-cover" src="{{ asset('image/12.webp') }}" alt="Background Main">
-        <div class="absolute left-4 sm:left-16 top-36 sm:top-1/2 transform -translate-y-1/2 text-white p-2 rounded w-1/2">
-            <h2 class=" text-xl sm:text-4xl lg:text-5xl font-bold whitespace-normal">
-                Membentuk Keterampilan, Menggerakkan Industri!
-            </h2>
-            @guest
-            <a href="/Daftar" class="mt-4 sm:mt-10 text-sm sm:text-base inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-                Daftar Sekarang
-            </a>
-            @endguest
-        </div>
-    </div>
-    <!-- Navbar + Image -->
-
-    <!-- Section Block-->
-    <!-- <div class="flex justify-between w-full">
-        <div class="flex-1 text-center p-4 font-semibold text-xl sm:text-3xl text-[#0F172A]" style="background-color: #F8FAFC; height: 6rem;">
-            250+
-            <p class="text-xs sm:text-sm text-[#0F172A]">Courses by our best mentors</p>
-        </div>
-        <div class="flex-1 text-center p-4 font-semibold text-xl sm:text-3xl text-[#0F172A] border-l border-gray-300" style="background-color: #F8FAFC; height: 6rem;">
-            1000+
-            <p class="text-xs sm:text-sm text-[#0F172A]">Courses by our best mentors</p>
-        </div>
-        <div class="flex-1 text-center p-4 font-semibold text-xl sm:text-3xl text-[#0F172A] border-l border-gray-300" style="background-color: #F8FAFC; height: 6rem;">
-            250+
-            <p class="text-xs sm:text-sm text-[#0F172A]">Courses by our best mentors</p>
-        </div>
-        <div class="flex-1 text-center p-4 font-semibold text-xl sm:text-3xl text-[#0F172A] border-l border-gray-300" style="background-color: #F8FAFC; height: 6rem;">
-            2400+
-            <p class="text-xs sm:text-sm text-[#0F172A]">Courses by our best mentors</p>
-        </div>
-    </div> -->
-    <!-- Section Block-->
 
 
     <!-- Main -->

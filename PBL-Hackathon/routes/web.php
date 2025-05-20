@@ -44,6 +44,7 @@ use App\Http\Controllers\UmpanBalikController;
 use App\Http\Middleware\PeranMiddleware;
 use App\Http\Controllers\SkillMatchingController;
 use App\Http\Controllers\BerandaTraineeController;
+use App\Http\Controllers\ProfilController;
 
 // Route Default
 Route::get('/', function () {
@@ -57,9 +58,14 @@ Route::get('/SkillMatching', function () {
 });
 
 // Beranda Trainee baru
-Route::get('/BerandaTrainee', function () {
-    return view('Traineev2.BerandaTrainee');
-});
+// Route::get('/BerandaTrainee', function () {
+//     return view('Traineev2.BerandaTrainee');
+// });
+
+// Jelajahi Trainee baru
+// Route::get('/Profil', function () {
+//     return view('Traineev2.Profil');
+// });
 
 // perubahan end
 
@@ -97,6 +103,8 @@ Route::post('/Masuk', [LoginPenggunaController::class, 'login'])->name('login');
 Route::middleware(['auth', PeranMiddleware::class . ':Peserta'])->group(function () {
     Route::post('/logoutPeserta', [LoginPenggunaController::class, 'logoutPeserta'])->name('logoutPeserta');
     Route::get('/DashboardPeserta', [DashboardPesertaController::class, 'dashboardPeserta'])->name('DashboardPeserta');
+    Route::get('/BerandaTrainee', [BerandaTraineeController::class, 'berandaTrainee'])->name('BerandaTrainee');
+     Route::get('/Profil', [ProfilController::class, 'profil'])->name('Profil');
     Route::get('/Kursus', [KursusController::class, 'Kursus']);
     Route::get('/KursusModul/{id_kursus}', [KursusController::class, 'kursusModul'])->name('kursusModul.show');
     Route::get('/KursusMateri', [KursusController::class, 'kursusMateri'])->name('kursusMateri');

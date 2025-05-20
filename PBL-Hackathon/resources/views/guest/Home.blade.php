@@ -5,6 +5,20 @@
 <!-- Javascript home -->
 @vite(['resources/js/home.js'])
 
+<div class="relative w-full">
+    <img class="h-auto w-full max-h-[700px] object-cover" src="{{ asset('image/12.webp') }}" alt="Background Main">
+    <div class="absolute left-4 sm:left-16 top-36 sm:top-1/2 transform -translate-y-1/2 text-white p-2 rounded w-1/2">
+        <h2 class=" text-xl sm:text-4xl lg:text-5xl font-bold whitespace-normal">
+            Membentuk Keterampilan, Menggerakkan Industri!
+        </h2>
+        @guest
+        <a href="/Daftar" class="mt-4 sm:mt-10 text-sm sm:text-base inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+            Daftar Sekarang
+        </a>
+        @endguest
+    </div>
+</div>
+
 <section>
     <!-- Row 1: Satu kolom -->
     <div class="sm:my-5 my-3">

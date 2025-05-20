@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BerandaTraineeController extends Controller
+class ProfilController extends Controller
 {
-     public function berandaTrainee()
+
+    public function profil()
     {
         // Ganti 'beranda.trainee' dengan nama file view kamu
-        return view('Traineev2.BerandaTrainee');
+        return view('Traineev2.Profil');
     }
 }

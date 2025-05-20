@@ -1,8 +1,9 @@
-@extends('layouts.maintrainee')
+@extends('layouts.main')
 
 @vite(['resources/js/home.js'])
-@section('MainTrainee')
-
+@section('Main')
+@vite(['resources/css/app.css','resources/js/app.js'])
+@vite(['resources/js/Waktu.js'])
 <!-- Quill CSS -->
 <!-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script> -->
@@ -10,27 +11,33 @@
 
 <!-- Javascript home -->
 
-<main class="  bg-gray-100">
-    <section class="mt-16 px-16">
+<main class="bg-gray-100">
+    <section class="mt-14 mb-15 px-6 lg:px-16">
         <div class="pt-10">
             <h1 class=" text-3xl font-bold">
                 Selamat Datang, <span class="font-semibold text-gray-700 text-2xl">William James Moriarty</span>👋
             </h1>
+            <p id="datetime" class="sm:text-sm ps-4 text-xs font-normal text-TeksSecond pt-5  sm:pt-3 lg:py-1"></p>
+               
+            </div>
         </div>
     </section>
-    <section class="p-3 px-24">
+    <!-- Rekomendasi kursus -->
+    <section class="p-3 sm:px-10 lg:px-16 bg-gray-100">
         <div class="sm:mb-0 my-3">
             <div class="bg-gwhite text-center py-4">
-                <div class="p-4 rounded-lg shadow-lg bg-white">
-                    <h2 class="my-2 font-bold text-xl text-left sm:text-3xl text-slate-950">Rekomendasi Kursus</h2>
-                    <p class="mb-5 text-gray-700 text-left">Temukan kursus terbaik yang sesuai dengan minat dan kebutuhan belajarmu</p>
+                <div class="px-3 sm:px-10 pt-5 pb-20 rounded-lg shadow-lg bg-white">
+                    <div class="text-left ps-2 sm:ps-5">
+                        <h2 class="my-2 font-bold text-xl sm:text-3xl text-slate-950">Rekomendasi Kursus</h2>
+                        <p class="mb-5 text-gray-700">Tingkatkan kemampuan dengan kursus yang sesuai bidangmu.</p>
+                    </div>
                     <!-- Grid Container -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Card 1 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
-                                <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
+                            <div class="relative cursor-default">
+                                <img class="w-full h-44 sm:h-36 lg:h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
                                 </div>
@@ -41,7 +48,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -51,24 +58,24 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-lg font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="lg:text-lg text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left hover:text-HoverGlow active:text-ButtonBase">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
+                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left cursor-default">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
-                                            <p class="text-sm font-medium text-gray-700">Sarah Johnson</p>
+                                            <p class="lg:text-sm text-xs font-medium text-gray-700">Sarah Johnson</p>
                                             <p class="text-xs text-gray-500">Senior Developer</p>
                                         </div>
                                     </div>
 
                                     <div class="text-right">
-                                        <p class="text-ButtonBase font-bold text-lg">Rp. 6.000.000</p>
+                                        <p class="text-ButtonBase font-bold text-base lg:text-lg">Rp. 6.000.000</p>
                                     </div>
                                 </div>
                             </div>
@@ -92,8 +99,8 @@
                         <!-- Card 2 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
-                                <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
+                            <div class="relative cursor-default">
+                                <img class="w-full h-44 sm:h-36 lg:h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
                                 </div>
@@ -104,7 +111,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -114,24 +121,24 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-lg font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="lg:text-lg text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left hover:text-HoverGlow active:text-ButtonBase">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to</p>
+                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left cursor-default">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
-                                            <p class="text-sm font-medium text-gray-700">Sarah Johnson</p>
+                                            <p class="lg:text-sm text-xs font-medium text-gray-700">Sarah Johnson</p>
                                             <p class="text-xs text-gray-500">Senior Developer</p>
                                         </div>
                                     </div>
 
                                     <div class="text-right">
-                                        <p class="text-ButtonBase font-bold text-lg">Rp. 6.000.000</p>
+                                        <p class="text-ButtonBase font-bold text-base lg:text-lg">Rp. 6.000.000</p>
                                     </div>
                                 </div>
                             </div>
@@ -155,8 +162,8 @@
                         <!-- Card 3 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
-                                <img class="w-full h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
+                            <div class="relative cursor-default">
+                                <img class="w-full h-44 sm:h-36 lg:h-44 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
                                 </div>
@@ -167,7 +174,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -177,24 +184,24 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-lg font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="lg:text-lg text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left hover:text-HoverGlow active:text-ButtonBase">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, beatae.</p>
+                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left cursor-default">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
-                                            <p class="text-sm font-medium text-gray-700">Sarah Johnson</p>
+                                            <p class="lg:text-sm text-xs font-medium text-gray-700">Sarah Johnson</p>
                                             <p class="text-xs text-gray-500">Senior Developer</p>
                                         </div>
                                     </div>
 
                                     <div class="text-right">
-                                        <p class="text-ButtonBase font-bold text-lg">Rp. 6.000.000</p>
+                                        <p class="text-ButtonBase font-bold text-base lg:text-lg">Rp. 6.000.000</p>
                                     </div>
                                 </div>
                             </div>
@@ -221,18 +228,19 @@
         </div>
     </section>
 
-    <section class="py-3 px-8 bg-white mb-20 shadow-lg">
+    <!-- Kursus Terpopuler -->
+    <section class="py-3 px-8 pb-20 bg-gray-100">
         <div class="sm:mb-0 my-3">
             <div class="bg-gwhite text-center py-4">
                 <div class="p-4">
-                    <h2 class="my-2 font-bold text-xl sm:text-3xl text-slate-950">Rekomendasi Kursus</h2>
-                    <p class="mb-5 text-gray-700">Temukan kursus terbaik yang sesuai dengan minat dan kebutuhan belajarmu</p>
+                    <h2 class="my-2 font-bold text-xl sm:text-3xl text-slate-950">Kursus Terpopuler</h2>
+                    <p class="mb-5 text-gray-700">Inilah kursus favorit dengan rating tinggi dan peminat terbanyak</p>
                     <!-- Grid Container -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <!-- Card 1 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
+                            <div class="relative cursor-default">
                                 <img class="w-full h-36 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
@@ -244,7 +252,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -254,14 +262,14 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="hover:text-HoverGlow active:text-ButtonBase text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
+                                    <p class="cursor-default text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
@@ -295,7 +303,7 @@
                         <!-- Card 2 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
+                            <div class="relative cursor-default">
                                 <img class="w-full h-36 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
@@ -307,7 +315,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -317,14 +325,14 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="hover:text-HoverGlow active:text-ButtonBase text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
+                                    <p class="cursor-default text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
@@ -358,7 +366,7 @@
                         <!-- Card 3 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
+                            <div class="relative cursor-default">
                                 <img class="w-full h-36 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
@@ -370,7 +378,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -380,14 +388,14 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="hover:text-HoverGlow active:text-ButtonBase text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
+                                    <p class="cursor-default text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
@@ -421,7 +429,7 @@
                         <!-- Card 4 -->
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <!-- Course Image -->
-                            <div class="relative">
+                            <div class="relative cursor-default">
                                 <img class="w-full h-36 object-cover" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Course thumbnail">
                                 <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
                                     Lanjutan
@@ -433,7 +441,7 @@
 
                             <!-- Course Content -->
                             <div class="p-6">
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-2 cursor-default">
                                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Pengelasan</span>
                                     <div class="flex items-center">
                                         <i class="fas fa-star text-yellow-400 text-sm"></i>
@@ -443,14 +451,14 @@
                                 </div>
 
                                 <div class="w-full text-left">
-                                    <a href="#" class="text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
+                                    <a href="#" class="hover:text-HoverGlow active:text-ButtonBase text-md font-bold text-gray-800 mb-1 line-clamp-2 text-left">
                                         Advanced React Patterns and Modern JavaScript Techniques
                                     </a>
-                                    <p class="text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
+                                    <p class="cursor-default text-gray-500 text-xs mb-4 line-clamp-2 text-left">Master React hooks, context API, and advanced state management to </p>
                                 </div>
 
 
-                                <div class="flex items-center justify-between">
+                                <div class="flex items-center justify-between cursor-default">
                                     <div class="flex items-center">
                                         <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
                                         <div class="ml-2">
@@ -487,30 +495,32 @@
         </div>
     </section>
 
-    <section class="min-h-screen bg-cover"
+
+    <!-- Umpan Balik -->
+    <section class="bg-cover mb-20 px-8"
         style="background-image: url('https://alroys.com/wp-content/uploads/2023/02/Shutterstock_1822872494-scaled.jpg')">>
-        <div class="mt-8 lg:w-2/5 lg:mx-6">
+        <div class="lg:w-2/5 lg:mx-6 py-4">
             <div
-                class="w-full px-8 py-6 sm:py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
-                <h1 class="text-xl font-medium text-gray-700 dark:text-gray-200">Umpan Balik</h1>
-                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                class="w-full p-6 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
+                <h1 class="cursor-default text-base lg:text-lg font-medium text-gray-700 dark:text-gray-200">Umpan Balik</h1>
+                <p class="cursor-default mt-2 text-xs lg:text-sm text-gray-500 dark:text-gray-400">
                     Kami sangat menghargai masukan Anda! Jika Anda memiliki waktu, kami akan sangat berterima kasih jika Anda dapat memberikan ulasan tentang pengalaman Anda menggunakan aplikasi ini. Ulasan Anda akan membantu kami untuk terus meningkatkan kualitas aplikasi.
                 </p>
-                <form class="mt-6 text-sm">
+                <form class="mt-6 text-xs lg:text-sm">
                     <div class="flex-1">
-                        <label class="block  text-sm text-gray-600 dark:text-gray-200">Nama</label>
+                        <label class="block text-xs lg:text-sm text-gray-600 dark:text-gray-200 mb-2 cursor-default">Nama</label>
                         <input type="text" placeholder="John Doe"
-                            class="block w-full px-5 py-3 mt-2 text-sm placeholder:text-sm text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            class="block w-full px-5 py-3 mt-2text-xs lg:text-sm placeholder:text-sm text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                     </div>
 
                     <div class="flex-1 mt-6">
-                        <label class="block mt-2 text-sm text-gray-600 dark:text-gray-200">Komentar</label>
+                        <label class="cursor-default block mt-2text-xs lg:text-sm text-gray-600 dark:text-gray-200">Komentar</label>
                         <textarea placeholder="Ulasan kamu..."
-                            class="block w-full px-5 py-3 mt-2 text-gray-700 text-sm placeholder:text-sm bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"></textarea>
+                            class="block w-full px-5 py-3 mt-2 text-gray-700text-xs lg:text-sm placeholder:text-sm bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"></textarea>
                     </div>
 
                     <button type="submit"
-                        class="w-full px-6 py-3 mt-8 text-sm font-semibold tracking-wide text-white capitalize transition-colors duration-700 transform bg-[#2563EB] rounded-md hover:bg-[#161D6F] focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+                        class="w-full px-6 py-3 mt-8 text-xs lg:text-sm font-semibold tracking-wide text-white capitalize transition-colors duration-700 transform bg-[#2563EB] rounded-md hover:bg-[#161D6F] focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
                         Kirim
                     </button>
                 </form>
