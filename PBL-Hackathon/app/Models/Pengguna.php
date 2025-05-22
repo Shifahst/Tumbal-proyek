@@ -14,15 +14,15 @@ class Pengguna extends Authenticatable
     protected $primaryKey = 'pengguna_id';
 
     protected $fillable = [
-        'nama',
-        'email',
-        'no_telepon',
-        'alamat',
-        'jenis_kelamin',
-        'kata_sandi',
-        'foto_profil',
-        'peran'
-    ];
+    'nama',
+    'email',
+    'no_telepon',  // Will accept null after migration
+    'alamat',      // Will accept null after migration
+    'kata_sandi',
+    'foto_profil',
+    'peran',       // Will accept null after migration
+    
+];
     protected $hidden = [
         'kata_sandi',
     ];
