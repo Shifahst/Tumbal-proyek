@@ -30,7 +30,7 @@
             <div class="w-full px-4 lg:px-0 mt-2 sm:mt-5 lg:mt-0 lg:max-w-md">
                 <!-- Minat Bidang -->
                 <div class="mb-2">
-                    <a href="#"
+                    <a href="{{ route('Masuk.google', ['id' => 1]) }}"
                         class="flex items-center justify-center gap-3 border border-gray-300 text-gray-900 text-sm font-medium rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4 hover:bg-gray-300 transition duration-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         
                         <i class="fa-brands fa-google text-lg" style="color: #000000;"></i>

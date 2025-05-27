@@ -1,0 +1,27 @@
+# ========== Laravel Project Ignore (PBL-Hackathon) ==========
+PBL-Hackathon/node_modules
+PBL-Hackathon/public/build
+PBL-Hackathon/public/hot
+PBL-Hackathon/public/storage
+PBL-Hackathon/storage/*.key
+PBL-Hackathon/vendor
+PBL-Hackathon/.env*
+PBL-Hackathon/.phpunit.result.cache
+PBL-Hackathon/.phpunit.cache
+PBL-Hackathon/.phpactor.json
+PBL-Hackathon/Homestead.*
+PBL-Hackathon/auth.json
+PBL-Hackathon/npm-debug.log
+PBL-Hackathon/yarn-error.log
+
+# ========== Umum & Editor ==========
+.fleet
+.idea
+.vscode
+.zed
+
+# ========== Python Project Ignore ==========
+.venv/
+__pycache__/
+*.pyc
+*.pyo
